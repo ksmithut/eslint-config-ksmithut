@@ -1,6 +1,6 @@
 {
   "name": "@ksmithut/eslint-config-ksmithut",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A repo with a collection of the various linting/styling rules that I wish to follow",
   "main": "es5.js",
   "scripts": {
