@@ -1,0 +1,23 @@
+{
+  "name": "@ksmithut/eslint-config-ksmithut",
+  "version": "1.0.0",
+  "description": "A repo with a collection of the various linting/styling rules that I wish to follow",
+  "main": "es5.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ksmithut/eslint-config-ksmithut.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "author": "ksmithut",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksmithut/eslint-config-ksmithut/issues"
+  },
+  "homepage": "https://github.com/ksmithut/eslint-config-ksmithut"
+}
