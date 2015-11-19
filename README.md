@@ -6,7 +6,7 @@ A repo with a collection of the various linting/styling rules that I wish to fol
 
 ```json
 {
-  "extends": "@ksmithut/eslint-config-ksmithut"
+  "extends": "eslint-config-ksmithut"
 }
 ```
 
@@ -14,6 +14,6 @@ es6
 
 ```json
 {
-  "extends": "@ksmithut/eslint-config-ksmithut/es6"
+  "extends": "eslint-config-ksmithut/es6"
 }
 ```
