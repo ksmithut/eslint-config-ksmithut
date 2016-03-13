@@ -28,5 +28,10 @@
     "eslint": "^2.3.0",
     "merge": "^1.2.0",
     "request-promise": "^2.0.1"
+  },
+  "dependencies": {
+    "babel-eslint": "^5.0.0",
+    "eslint-plugin-mocha": "^2.0.0",
+    "eslint-plugin-react": "^4.2.1"
   }
 }

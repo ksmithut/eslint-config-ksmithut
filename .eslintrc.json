@@ -1,0 +1,13 @@
+{
+  "parser": "esprima",
+  "parserOptions": {},
+  "env": {},
+  "globals": {},
+  "plugins": [],
+  "extends": [
+    "./es5.js",
+    "./es6.js",
+    "./node.js"
+  ],
+  "rules": {}
+}

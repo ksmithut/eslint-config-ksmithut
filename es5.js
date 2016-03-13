@@ -1,237 +1,362 @@
-'use strict';
+'use strict'
 
 module.exports = {
-  'env': {
-    'node': true,
-  },
-  'globals': {},
-  'rules': {
+  parser: 'esprima',
+  rules: {
     /**
      * Possible Errors
      * The following rules point out areas where you might have made mistakes.
      */
-    'comma-dangle': [ 2, 'always-multiline' ], // disallow or enforce trailing commas (recommended)
-    'no-cond-assign': 2, // disallow assignment in conditional expressions (recommended)
-    'no-console': 1, // disallow use of console in the node environment (recommended)
-    'no-constant-condition': 2, // disallow use of constant expressions in conditions (recommended)
-    'no-control-regex': 2, // disallow control characters in regular expressions (recommended)
-    'no-debugger': 2, // disallow use of debugger (recommended)
-    'no-dupe-args': 2, // disallow duplicate arguments in functions (recommended)
-    'no-dupe-keys': 2, // disallow duplicate keys when creating object literals (recommended)
-    'no-duplicate-case': 2, // disallow a duplicate case label. (recommended)
-    'no-empty-character-class': 2, // disallow the use of empty character classes in regular expressions (recommended)
-    'no-empty': 2, // disallow empty statements (recommended)
-    'no-ex-assign': 2, // disallow assigning to the exception in a catch block (recommended)
-    'no-extra-boolean-cast': 2, // disallow double-negation boolean casts in a boolean context (recommended)
-    'no-extra-parens': 0, // disallow unnecessary parentheses
-    'no-extra-semi': 2, // disallow unnecessary semicolons (recommended) (fixable)
-    'no-func-assign': 2, // disallow overwriting functions written as function declarations (recommended)
-    'no-inner-declarations': [ 2, 'functions' ], // disallow function or variable declarations in nested blocks (recommended)
-    'no-invalid-regexp': 2, // disallow invalid regular expression strings in the RegExp constructor (recommended)
-    'no-irregular-whitespace': 2, // disallow irregular whitespace outside of strings and comments (recommended)
-    'no-negated-in-lhs': 2, // disallow negation of the left operand of an in expression (recommended)
-    'no-obj-calls': 2, // disallow the use of object properties of the global object (Math and JSON) as functions (recommended)
-    'no-regex-spaces': 2, // disallow multiple spaces in a regular expression literal (recommended)
-    'no-sparse-arrays': 2, // disallow sparse arrays (recommended)
-    'no-unreachable': 2, // disallow unreachable statements after a return, throw, continue, or break statement (recommended)
-    'use-isnan': 2, // disallow comparisons with the value NaN (recommended)
-    'valid-jsdoc': 1, // Ensure JSDoc comments are valid
-    'valid-typeof': 2, // Ensure that the results of typeof are compared against a valid string (recommended)
-    'no-unexpected-multiline': 2, // Avoid code that looks like two expressions but is actually one
+
+    'comma-dangle': [
+      2,
+      'never'
+    ], // disallow or enforce trailing commas - http://eslint.org/docs/rules/comma-dangle
+    'no-cond-assign': [
+      2,
+      'except-parens'
+    ], // disallow assignment in conditional expressions - http://eslint.org/docs/rules/no-cond-assign
+    'no-console': 1, // disallow use of console - http://eslint.org/docs/rules/no-console
+    'no-constant-condition': 2, // disallow use of constant expressions in conditions - http://eslint.org/docs/rules/no-constant-condition
+    'no-control-regex': 2, // disallow control characters in regular expressions - http://eslint.org/docs/rules/no-control-regex
+    'no-debugger': 2, // disallow use of debugger - http://eslint.org/docs/rules/no-debugger
+    'no-dupe-args': 2, // disallow duplicate arguments in functions - http://eslint.org/docs/rules/no-dupe-args
+    'no-dupe-keys': 2, // disallow duplicate keys when creating object literals - http://eslint.org/docs/rules/no-dupe-keys
+    'no-duplicate-case': 2, // disallow a duplicate case label. - http://eslint.org/docs/rules/no-duplicate-case
+    'no-empty': 2, // disallow empty block statements - http://eslint.org/docs/rules/no-empty
+    'no-empty-character-class': 2, // disallow the use of empty character classes in regular expressions - http://eslint.org/docs/rules/no-empty-character-class
+    'no-ex-assign': 2, // disallow assigning to the exception in a catch block - http://eslint.org/docs/rules/no-ex-assign
+    'no-extra-boolean-cast': 2, // disallow double-negation boolean casts in a boolean context - http://eslint.org/docs/rules/no-extra-boolean-cast
+    'no-extra-parens': [
+      2,
+      'all',
+      {
+        conditionalAssign: true
+      }
+    ], // disallow unnecessary parentheses - http://eslint.org/docs/rules/no-extra-parens
+    'no-extra-semi': 2, // disallow unnecessary semicolons - http://eslint.org/docs/rules/no-extra-semi
+    'no-func-assign': 2, // disallow overwriting functions written as function declarations - http://eslint.org/docs/rules/no-func-assign
+    'no-inner-declarations': 2, // disallow function or variable declarations in nested blocks - http://eslint.org/docs/rules/no-inner-declarations
+    'no-invalid-regexp': 2, // disallow invalid regular expression strings in the RegExp constructor - http://eslint.org/docs/rules/no-invalid-regexp
+    'no-irregular-whitespace': 2, // disallow irregular whitespace outside of strings and comments - http://eslint.org/docs/rules/no-irregular-whitespace
+    'no-negated-in-lhs': 2, // disallow negation of the left operand of an in expression - http://eslint.org/docs/rules/no-negated-in-lhs
+    'no-obj-calls': 2, // disallow the use of object properties of the global object (Math and JSON) as functions - http://eslint.org/docs/rules/no-obj-calls
+    'no-regex-spaces': 2, // disallow multiple spaces in a regular expression literal - http://eslint.org/docs/rules/no-regex-spaces
+    'no-sparse-arrays': 2, // disallow sparse arrays - http://eslint.org/docs/rules/no-sparse-arrays
+    'no-unexpected-multiline': 2, // Avoid code that looks like two expressions but is actually one - http://eslint.org/docs/rules/no-unexpected-multiline
+    'no-unreachable': 2, // disallow unreachable statements after a return, throw, continue, or break statement - http://eslint.org/docs/rules/no-unreachable
+    'use-isnan': 2, // disallow comparisons with the value NaN - http://eslint.org/docs/rules/use-isnan
+    'valid-jsdoc': [
+      1,
+      {
+        prefer: {
+          returns: 'returns'
+        },
+        requireReturn: true,
+        requireParamDescription: true,
+        requireReturnDescription: true,
+        requireReturnType: true
+      }
+    ], // Ensure JSDoc comments are valid - http://eslint.org/docs/rules/valid-jsdoc
+    'valid-typeof': 2, // Ensure that the results of typeof are compared against a valid string - http://eslint.org/docs/rules/valid-typeof
 
     /**
      * Best Practices
-     * These are rules designed to prevent you from making mistakes. They either prescribe a better way of doing something or help you avoid footguns.
+     * These are rules designed to prevent you from making mistakes. They either
+     * prescribe a better way of doing something or help you avoid footguns.
      */
-    'accessor-pairs': 2, // Enforces getter/setter pairs in objects
-    'block-scoped-var': 2, // treat var statements as if they were block scoped
-    'complexity': [ 1, 10 ], // specify the maximum cyclomatic complexity allowed in a program
-    'consistent-return': 2, // require return statements to either always or never specify values
-    'curly': [ 2, 'all' ], // specify curly brace conventions for all control statements
-    'default-case': 2, // require default case in switch statements
-    'dot-notation': [ 1, { 'allowKeywords': true } ], // encourages use of dot notation whenever possible
-    'dot-location': [ 2, 'property' ], // enforces consistent newlines before or after dots
-    'eqeqeq': [ 1, 'allow-null' ], // require the use of === and !== (fixable)
-    'guard-for-in': 2, // make sure for-in loops have an if statement
-    'no-alert': 1, // disallow the use of alert, confirm, and prompt
-    'no-caller': 2, // disallow use of arguments.caller or arguments.callee
-    'no-div-regex': 2, // disallow division operators explicitly at beginning of regular expression
-    'no-else-return': 2, // disallow else after a return in an if
-    'no-empty-label': 2, // disallow use of labels for anything other than loops and switches
-    'no-eq-null': 0, // disallow comparisons to null without a type-checking operator
-    'no-eval': 2, // disallow use of eval()
-    'no-extend-native': 2, // disallow adding to native types
-    'no-extra-bind': 2, // disallow unnecessary function binding
-    'no-fallthrough': 2, // disallow fallthrough of case statements (recommended)
-    'no-floating-decimal': 2, // disallow the use of leading or trailing decimal points in numeric literals
-    'no-implicit-coercion': 2, // disallow the type conversions with shorter notations
-    'no-implied-eval': 2, // disallow use of eval()-like methods
-    'no-invalid-this': 0, // disallow this keywords outside of classes or class-like objects
-    'no-iterator': 2, // disallow usage of __iterator__ property
-    'no-labels': 2, // disallow use of labeled statements
-    'no-lone-blocks': 2, // disallow unnecessary nested blocks
-    'no-loop-func': 0, // disallow creation of functions within loops
-    'no-multi-spaces': 2, // disallow use of multiple spaces (fixable)
-    'no-multi-str': 2, // disallow use of multiline strings
-    'no-native-reassign': 2, // disallow reassignments of native objects
-    'no-new-func': 2, // disallow use of new operator for Function object
-    'no-new-wrappers': 2, // disallows creating new instances of String,Number, and Boolean
-    'no-new': 2, // disallow use of the new operator when not part of an assignment or comparison
-    'no-octal-escape': 2, // disallow use of octal escape sequences in string literals, such as var foo = 'Copyright \251';
-    'no-octal': 2, // disallow use of octal literals (recommended)
-    'no-param-reassign': 0, // disallow reassignment of function parameters
-    'no-process-env': 0, // disallow use of process.env
-    'no-proto': 2, // disallow usage of __proto__ property
-    'no-redeclare': 2, // disallow declaring the same variable more than once (recommended)
-    'no-return-assign': [ 2, 'except-parens' ], // disallow use of assignment in return statement
-    'no-script-url': 2, // disallow use of javascript: urls.
-    'no-self-compare': 2, // disallow comparisons where both sides are exactly the same
-    'no-sequences': 2, // disallow use of the comma operator
-    'no-throw-literal': 2, // restrict what can be thrown as an exception
-    'no-unused-expressions': 1, // disallow usage of expressions in statement position
-    'no-useless-call': 2, // disallow unnecessary .call() and .apply()
-    'no-useless-concat': 2, // disallow unnecessary concatenation of literals or template literals
-    'no-void': 2, // disallow use of the void operator
-    'no-warning-comments': [ 1, {
-      'terms': [
-        'todo',
-        'fixme',
-        'xxx',
-      ],
-      'location': 'start',
-    } ], // disallow usage of configurable warning terms in comments - e.g. TODO or FIXME
-    'no-with': 2, // disallow use of the with statement
-    'radix': 2, // require use of the second argument for parseInt()
-    'vars-on-top': 0, // require declaration of all vars at the top of their containing scope
-    'wrap-iife': [ 2, 'any' ], // require immediate function invocation to be wrapped in parentheses
-    'yoda': [ 2, 'never' ], // require or disallow Yoda conditions
+
+    'accessor-pairs': 2, // Enforces getter/setter pairs in objects - http://eslint.org/docs/rules/accessor-pairs
+    'array-callback-return': 2, // Enforces return statements in callbacks of array’s methods - http://eslint.org/docs/rules/array-callback-return
+    'block-scoped-var': 2, // treat var statements as if they were block scoped - http://eslint.org/docs/rules/block-scoped-var
+    'complexity': [
+      2,
+      11
+    ], // specify the maximum cyclomatic complexity allowed in a program - http://eslint.org/docs/rules/complexity
+    'consistent-return': 2, // require return statements to either always or never specify values - http://eslint.org/docs/rules/consistent-return
+    'curly': [
+      2,
+      'multi'
+    ], // specify curly brace conventions for all control statements - http://eslint.org/docs/rules/curly
+    'default-case': 2, // require default case in switch statements - http://eslint.org/docs/rules/default-case
+    'dot-location': [
+      2,
+      'property'
+    ], // enforces consistent newlines before or after dots - http://eslint.org/docs/rules/dot-location
+    'dot-notation': 2, // encourages use of dot notation whenever possible - http://eslint.org/docs/rules/dot-notation
+    'eqeqeq': [
+      2,
+      'allow-null'
+    ], // require the use of === and !== - http://eslint.org/docs/rules/eqeqeq
+    'guard-for-in': 2, // make sure for-in loops have an if statement - http://eslint.org/docs/rules/guard-for-in
+    'no-alert': 2, // disallow the use of alert, confirm, and prompt - http://eslint.org/docs/rules/no-alert
+    'no-caller': 2, // disallow use of arguments.caller or arguments.callee - http://eslint.org/docs/rules/no-caller
+    'no-case-declarations': 2, // disallow lexical declarations in case clauses - http://eslint.org/docs/rules/no-case-declarations
+    'no-div-regex': 2, // disallow division operators explicitly at beginning of regular expression - http://eslint.org/docs/rules/no-div-regex
+    'no-else-return': 2, // disallow else after a return in an if - http://eslint.org/docs/rules/no-else-return
+    'no-empty-function': 2, // disallow use of empty functions - http://eslint.org/docs/rules/no-empty-function
+    'no-empty-pattern': 2, // disallow use of empty destructuring patterns - http://eslint.org/docs/rules/no-empty-pattern
+    'no-eq-null': 0, // disallow comparisons to null without a type-checking operator - http://eslint.org/docs/rules/no-eq-null
+    'no-eval': 2, // disallow use of eval() - http://eslint.org/docs/rules/no-eval
+    'no-extend-native': 2, // disallow adding to native types - http://eslint.org/docs/rules/no-extend-native
+    'no-extra-bind': 2, // disallow unnecessary function binding - http://eslint.org/docs/rules/no-extra-bind
+    'no-extra-label': 2, // disallow unnecessary labels - http://eslint.org/docs/rules/no-extra-label
+    'no-fallthrough': 0, // disallow fallthrough of case statements - http://eslint.org/docs/rules/no-fallthrough
+    'no-floating-decimal': 2, // disallow the use of leading or trailing decimal points in numeric literals - http://eslint.org/docs/rules/no-floating-decimal
+    'no-implicit-coercion': 2, // disallow the type conversions with shorter notations - http://eslint.org/docs/rules/no-implicit-coercion
+    'no-implicit-globals': 2, // disallow var and named functions in global scope - http://eslint.org/docs/rules/no-implicit-globals
+    'no-implied-eval': 2, // disallow use of eval()-like methods - http://eslint.org/docs/rules/no-implied-eval
+    'no-invalid-this': 2, // disallow this keywords outside of classes or class-like objects - http://eslint.org/docs/rules/no-invalid-this
+    'no-iterator': 2, // disallow usage of __iterator__ property - http://eslint.org/docs/rules/no-iterator
+    'no-labels': 2, // disallow use of labeled statements - http://eslint.org/docs/rules/no-labels
+    'no-lone-blocks': 2, // disallow unnecessary nested blocks - http://eslint.org/docs/rules/no-lone-blocks
+    'no-loop-func': 2, // disallow creation of functions within loops - http://eslint.org/docs/rules/no-loop-func
+    'no-magic-numbers': 0, // disallow the use of magic numbers - http://eslint.org/docs/rules/no-magic-numbers
+    'no-multi-spaces': 2, // disallow use of multiple spaces - http://eslint.org/docs/rules/no-multi-spaces
+    'no-multi-str': 2, // disallow use of multiline strings - http://eslint.org/docs/rules/no-multi-str
+    'no-native-reassign': 2, // disallow reassignments of native objects - http://eslint.org/docs/rules/no-native-reassign
+    'no-new': 2, // disallow use of the new operator when not part of an assignment or comparison - http://eslint.org/docs/rules/no-new
+    'no-new-func': 2, // disallow use of new operator for Function object - http://eslint.org/docs/rules/no-new-func
+    'no-new-wrappers': 2, // disallows creating new instances of String,Number, and Boolean - http://eslint.org/docs/rules/no-new-wrappers
+    'no-octal': 2, // disallow use of octal literals - http://eslint.org/docs/rules/no-octal
+    'no-octal-escape': 2, // disallow use of octal escape sequences in string literals, such as var foo = 'Copyright \251'; - http://eslint.org/docs/rules/no-octal-escape
+    'no-param-reassign': 0, // disallow reassignment of function parameters - http://eslint.org/docs/rules/no-param-reassign
+    'no-proto': 2, // disallow usage of __proto__ property - http://eslint.org/docs/rules/no-proto
+    'no-redeclare': 2, // disallow declaring the same variable more than once - http://eslint.org/docs/rules/no-redeclare
+    'no-return-assign': [
+      2,
+      'except-parens'
+    ], // disallow use of assignment in return statement - http://eslint.org/docs/rules/no-return-assign
+    'no-script-url': 2, // disallow use of javascript: urls. - http://eslint.org/docs/rules/no-script-url
+    'no-self-assign': 2, // disallow assignments where both sides are exactly the same - http://eslint.org/docs/rules/no-self-assign
+    'no-self-compare': 2, // disallow comparisons where both sides are exactly the same - http://eslint.org/docs/rules/no-self-compare
+    'no-sequences': 2, // disallow use of the comma operator - http://eslint.org/docs/rules/no-sequences
+    'no-throw-literal': 2, // restrict what can be thrown as an exception - http://eslint.org/docs/rules/no-throw-literal
+    'no-unmodified-loop-condition': 2, // disallow unmodified conditions of loops - http://eslint.org/docs/rules/no-unmodified-loop-condition
+    'no-unused-expressions': 2, // disallow usage of expressions in statement position - http://eslint.org/docs/rules/no-unused-expressions
+    'no-unused-labels': 2, // disallow unused labels - http://eslint.org/docs/rules/no-unused-labels
+    'no-useless-call': 2, // disallow unnecessary .call() and .apply() - http://eslint.org/docs/rules/no-useless-call
+    'no-useless-concat': 2, // disallow unnecessary concatenation of literals or template literals - http://eslint.org/docs/rules/no-useless-concat
+    'no-void': 2, // disallow use of the void operator - http://eslint.org/docs/rules/no-void
+    'no-warning-comments': 1, // disallow usage of configurable warning terms in comments - e.g. TODO or FIXME - http://eslint.org/docs/rules/no-warning-comments
+    'no-with': 2, // disallow use of the with statement - http://eslint.org/docs/rules/no-with
+    'radix': 2, // require use of the second argument for parseInt() - http://eslint.org/docs/rules/radix
+    'vars-on-top': 2, // require declaration of all vars at the top of their containing scope - http://eslint.org/docs/rules/vars-on-top
+    'wrap-iife': [
+      2,
+      'inside'
+    ], // require immediate function invocation to be wrapped in parentheses - http://eslint.org/docs/rules/wrap-iife
+    'yoda': 1, // require or disallow Yoda conditions - http://eslint.org/docs/rules/yoda
 
     /**
      * Strict Mode
-     * These rules relate to using strict mode.
+     * These rules relate to using strict mode and strict mode directives.
      */
-    'strict': [ 2, 'global' ], // controls location of Use Strict Directives
+
+    'strict': [
+      2,
+      'safe'
+    ], // require effective use of strict mode directives - http://eslint.org/docs/rules/strict
 
     /**
      * Variables
      * These rules have to do with variable declarations.
      */
-    'init-declarations': 0, // enforce or disallow variable initializations at definition
-    'no-catch-shadow': 2, // disallow the catch clause parameter name being the same as a variable in the outer scope
-    'no-delete-var': 2, // disallow deletion of variables (recommended)
-    'no-label-var': 2, // disallow labels that share a name with a variable
-    'no-shadow-restricted-names': 2, // disallow shadowing of names such as arguments
-    'no-shadow': 2, // disallow declaration of variables already declared in the outer scope
-    'no-undef-init': 0, // disallow use of undefined when initializing variables
-    'no-undef': 2, // disallow use of undeclared variables unless mentioned in a /*global */ block (recommended)
-    'no-undefined': 2, // disallow use of undefined variable
-    'no-unused-vars': [ 2, {
-      'vars': 'local',
-      'args': 'after-used'
-    } ], // disallow declaration of variables that are not used in the code (recommended)
-    'no-use-before-define': [ 2, 'nofunc' ], // disallow use of variables before they are defined
+
+    'init-declarations': 0, // enforce or disallow variable initializations at definition - http://eslint.org/docs/rules/init-declarations
+    'no-catch-shadow': 2, // disallow the catch clause parameter name being the same as a variable in the outer scope - http://eslint.org/docs/rules/no-catch-shadow
+    'no-delete-var': 2, // disallow deletion of variables - http://eslint.org/docs/rules/no-delete-var
+    'no-label-var': 2, // disallow labels that share a name with a variable - http://eslint.org/docs/rules/no-label-var
+    'no-restricted-globals': 2, // restrict usage of specified global variables - http://eslint.org/docs/rules/no-restricted-globals
+    'no-shadow': 2, // disallow declaration of variables already declared in the outer scope - http://eslint.org/docs/rules/no-shadow
+    'no-shadow-restricted-names': 2, // disallow shadowing of names such as arguments - http://eslint.org/docs/rules/no-shadow-restricted-names
+    'no-undef': 2, // disallow use of undeclared variables unless mentioned in a /*global */ block - http://eslint.org/docs/rules/no-undef
+    'no-undef-init': 0, // disallow use of undefined when initializing variables - http://eslint.org/docs/rules/no-undef-init
+    'no-undefined': 2, // disallow use of undefined variable - http://eslint.org/docs/rules/no-undefined
+    'no-unused-vars': 2, // disallow declaration of variables that are not used in the code - http://eslint.org/docs/rules/no-unused-vars
+    'no-use-before-define': 2, // disallow use of variables before they are defined - http://eslint.org/docs/rules/no-use-before-define
 
     /**
      * Node.js and CommonJS
-     * These rules are specific to JavaScript running on Node.js or using CommonJS in the browser.
+     * These rules are specific to JavaScript running on Node.js or using
+     * CommonJS in the browser.
      */
-    'callback-return': 2, // enforce return after a callback
-    'global-require': 2, // disallow require() outside of the top-level module scope
-    'handle-callback-err': 2, // enforce error handling in callbacks
-    'no-mixed-requires': [ 2, {
-      'grouping': true
-    } ], // disallow mixing regular variable and require declarations
-    'no-new-require': 2, // disallow use of new operator with the require function
-    'no-path-concat': 2, // disallow string concatenation with __dirname and __filename
-    'no-process-exit': 2, // disallow process.exit()
-    'no-restricted-modules': 0, // restrict usage of specified node modules
-    'no-sync': 0, // disallow use of synchronous methods
+
+    'callback-return': 2, // enforce return after a callback - http://eslint.org/docs/rules/callback-return
+    'global-require': 2, // enforce require() on top-level module scope - http://eslint.org/docs/rules/global-require
+    'handle-callback-err': 2, // enforce error handling in callbacks - http://eslint.org/docs/rules/handle-callback-err
+    'no-mixed-requires': 2, // disallow mixing regular variable and require declarations - http://eslint.org/docs/rules/no-mixed-requires
+    'no-new-require': 2, // disallow use of new operator with the require function - http://eslint.org/docs/rules/no-new-require
+    'no-path-concat': 2, // disallow string concatenation with __dirname and __filename - http://eslint.org/docs/rules/no-path-concat
+    'no-process-env': 0, // disallow use of process.env - http://eslint.org/docs/rules/no-process-env
+    'no-process-exit': 2, // disallow process.exit() - http://eslint.org/docs/rules/no-process-exit
+    'no-restricted-modules': 0, // restrict usage of specified modules when loaded by require function - http://eslint.org/docs/rules/no-restricted-modules
+    'no-sync': 2, // disallow use of synchronous methods - http://eslint.org/docs/rules/no-sync
 
     /**
      * Stylistic Issues
      * These rules are purely matters of style and are quite subjective.
      */
-    'array-bracket-spacing': [ 1, 'always' ], // enforce spacing inside array brackets (fixable)
-    'block-spacing': 1, // disallow or enforce spaces inside of single line blocks (fixable)
-    'brace-style': [ 1, '1tbs', {
-      'allowSingleLine': true
-    } ], // enforce one true brace style
-    'camelcase': 1, // require camel case names
-    'comma-spacing': 1, // enforce spacing before and after comma
-    'comma-style': 1, // enforce one true comma style
-    'computed-property-spacing': [ 1, 'never' ], // require or disallow padding inside computed properties (fixable)
-    'consistent-this': [ 0, 'that' ], // enforce consistent naming when capturing the current execution context
-    'eol-last': 1, // enforce newline at the end of file, with no multiple empty lines (fixable)
-    'func-names': 0, // require function expressions to have a name
-    'func-style': [ 1, 'declaration' ], // enforce use of function declarations or expressions
-    'id-length': [ 0, {
-      'min': 3,
-      'max': 20,
-      'properties': 'never',
-      'exceptions': [
-        'i',
-        'j',
-        '$',
-        'cb',
-      ],
-    } ], // this option enforces minimum and maximum identifier lengths (variable names, property names etc.)
-    'id-match': 0, // require identifiers to match the provided regular expression
-    'indent': [ 1, 2, { 'SwitchCase': 1 } ], // specify tab or space width for your code (fixable)
-    'jsx-quotes': [ 1, 'prefer-double' ], // specify whether double or single quotes should be used in JSX attributes
-    'key-spacing': [ 1, {
-      'beforeColon': false,
-      'afterColon': true
-    } ], // enforce spacing between keys and values in object literal properties
-    'lines-around-comment': 0, // enforce empty lines around comments
-    'linebreak-style': [ 1, 'unix' ], // disallow mixed 'LF' and 'CRLF' as linebreaks
-    'max-nested-callbacks': [ 0, 2 ], // specify the maximum depth callbacks can be nested
-    'new-cap': 1, // require a capital letter for constructors
-    'new-parens': 1, // disallow the omission of parentheses when invoking a constructor with no arguments
-    'newline-after-var': 1, // require or disallow an empty newline after variable declarations
-    'no-array-constructor': 1, // disallow use of the Array constructor
-    'no-continue': 1, // disallow use of the continue statement
-    'no-inline-comments': 0, // disallow comments inline after code
-    'no-lonely-if': 1, // disallow if as the only statement in an else block
-    'no-mixed-spaces-and-tabs': [ 1, false ], // disallow mixed spaces and tabs for indentation (recommended)
-    'no-multiple-empty-lines': [ 1, { 'max': 3 } ], // disallow multiple empty lines
-    'no-nested-ternary': 1, // disallow nested ternary expressions
-    'no-negated-condition': 1, // disallow negated conditions
-    'no-new-object': 1, // disallow the use of the Object constructor
-    'no-restricted-syntax': 0, // disallow use of certain syntax in code
-    'no-spaced-func': 1, // disallow space between function identifier and application (fixable)
-    'no-ternary': 0, // disallow the use of ternary operators
-    'no-trailing-spaces': 1, // disallow trailing whitespace at the end of lines (fixable)
-    'no-underscore-dangle': 0, // disallow dangling underscores in identifiers
-    'no-unneeded-ternary': 1, // disallow the use of ternary operators when a simpler alternative exists
-    'object-curly-spacing': [ 1, 'always' ], // require or disallow padding inside curly braces (fixable)
-    'one-var': [ 0, {
-      'uninitialized': 'always',
-      'initialized': 'never'
-    } ], // require or disallow one variable declaration per function
-    'operator-assignment': [ 0, 'always' ], // require assignment operator shorthand where possible or prohibit it entirely
-    'operator-linebreak': [ 1, 'before' ], // enforce operators to be placed before or after line breaks
-    'padded-blocks': 0, // enforce padding within blocks
-    'quote-props': [ 1, 'consistent' ], // require quotes around object literal property names
-    'quotes': [ 1, 'single' ], // specify whether backticks, double or single quotes should be used (fixable)
-    'require-jsdoc': 0, // Require JSDoc comment
-    'semi-spacing': [ 1, {
-      'before': false,
-      'after': true
-    } ], // enforce spacing before and after semicolons
-    'semi': 1, // require or disallow use of semicolons instead of ASI (fixable)
-    'sort-vars': 0, // sort variables within the same declaration block
-    'space-after-keywords': [ 1, 'always' ], // require a space after certain keywords (fixable)
-    'space-before-keywords': [ 1, 'always' ], // require a space before certain keywords (fixable)
-    'space-before-blocks': [ 1, 'always' ], // require or disallow a space before blocks (fixable)
-    'space-before-function-paren': [ 1, 'never' ], // require or disallow a space before function opening parenthesis (fixable)
-    'space-in-parens': [ 1, 'never' ], // require or disallow spaces inside parentheses
-    'space-infix-ops': 1, // require spaces around operators (fixable)
-    'space-return-throw-case': 1, // require a space after return, throw, and case (fixable)
-    'space-unary-ops': [ 1, {
-      'words': true,
-      'nonwords': false
-    } ], // require or disallow spaces before/after unary operators (fixable)
-    'spaced-comment': 1, // require or disallow a space immediately following the // or /* in a comment
-    'wrap-regex': 1, // require regex literals to be wrapped in parentheses
+
+    'array-bracket-spacing': [
+      2,
+      'always',
+      {
+        singleValue: false,
+        arraysInArrays: false,
+        objectsInArrays: false
+      }
+    ], // enforce spacing inside array brackets - http://eslint.org/docs/rules/array-bracket-spacing
+    'block-spacing': 2, // disallow or enforce spaces inside of single line blocks - http://eslint.org/docs/rules/block-spacing
+    'brace-style': [
+      2,
+      '1tbs',
+      {
+        allowSingleLine: true
+      }
+    ], // enforce one true brace style - http://eslint.org/docs/rules/brace-style
+    'camelcase': 2, // require camel case names - http://eslint.org/docs/rules/camelcase
+    'comma-spacing': 2, // enforce spacing before and after comma - http://eslint.org/docs/rules/comma-spacing
+    'comma-style': 0, // enforce one true comma style - http://eslint.org/docs/rules/comma-style
+    'computed-property-spacing': 2, // require or disallow padding inside computed properties - http://eslint.org/docs/rules/computed-property-spacing
+    'consistent-this': [
+      2,
+      'that',
+      'self'
+    ], // enforce consistent naming when capturing the current execution context - http://eslint.org/docs/rules/consistent-this
+    'eol-last': 2, // enforce newline at the end of file, with no multiple empty lines - http://eslint.org/docs/rules/eol-last
+    'func-names': 0, // require function expressions to have a name - http://eslint.org/docs/rules/func-names
+    'func-style': [
+      2,
+      'declaration'
+    ], // enforce use of function declarations or expressions - http://eslint.org/docs/rules/func-style
+    'id-blacklist': 0, // blacklist certain identifiers to prevent them being used - http://eslint.org/docs/rules/id-blacklist
+    'id-length': 0, // this option enforces minimum and maximum identifier lengths (variable names, property names etc.) - http://eslint.org/docs/rules/id-length
+    'id-match': 0, // require identifiers to match the provided regular expression - http://eslint.org/docs/rules/id-match
+    'indent': [
+      2,
+      2
+    ], // specify tab or space width for your code - http://eslint.org/docs/rules/indent
+    'jsx-quotes': [
+      2,
+      'prefer-double'
+    ], // specify whether double or single quotes should be used in JSX attributes - http://eslint.org/docs/rules/jsx-quotes
+    'key-spacing': 2, // enforce spacing between keys and values in object literal properties - http://eslint.org/docs/rules/key-spacing
+    'keyword-spacing': 2, // enforce spacing before and after keywords - http://eslint.org/docs/rules/keyword-spacing
+    'linebreak-style': 2, // disallow mixed ‘LF’ and ‘CRLF’ as linebreaks - http://eslint.org/docs/rules/linebreak-style
+    'lines-around-comment': 0, // enforce empty lines around comments - http://eslint.org/docs/rules/lines-around-comment
+    'max-depth': [
+      2,
+      4
+    ], // specify the maximum depth that blocks can be nested - http://eslint.org/docs/rules/max-depth
+    'max-len': [
+      2,
+      {
+        code: 80,
+        tabWidth: 2,
+        ignoreUrls: true,
+        ignoreTrailingComments: true
+      }
+    ], // specify the maximum length of a line in your program - http://eslint.org/docs/rules/max-len
+    'max-nested-callbacks': [
+      2,
+      4
+    ], // specify the maximum depth callbacks can be nested - http://eslint.org/docs/rules/max-nested-callbacks
+    'max-params': [
+      2,
+      4
+    ], // limits the number of parameters that can be used in the function declaration - http://eslint.org/docs/rules/max-params
+    'max-statements': [
+      2,
+      11
+    ], // specify the maximum number of statement allowed in a function - http://eslint.org/docs/rules/max-statements
+    'new-cap': 2, // require a capital letter for constructors - http://eslint.org/docs/rules/new-cap
+    'new-parens': 2, // disallow the omission of parentheses when invoking a constructor with no arguments - http://eslint.org/docs/rules/new-parens
+    'newline-after-var': 2, // require or disallow an empty newline after variable declarations - http://eslint.org/docs/rules/newline-after-var
+    'newline-before-return': 0, // require newline before return statement - http://eslint.org/docs/rules/newline-before-return
+    'newline-per-chained-call': 2, // enforce newline after each call when chaining the calls - http://eslint.org/docs/rules/newline-per-chained-call
+    'no-array-constructor': 2, // disallow use of the Array constructor - http://eslint.org/docs/rules/no-array-constructor
+    'no-bitwise': 2, // disallow use of bitwise operators - http://eslint.org/docs/rules/no-bitwise
+    'no-continue': 2, // disallow use of the continue statement - http://eslint.org/docs/rules/no-continue
+    'no-inline-comments': 0, // disallow comments inline after code - http://eslint.org/docs/rules/no-inline-comments
+    'no-lonely-if': 2, // disallow if as the only statement in an else block - http://eslint.org/docs/rules/no-lonely-if
+    'no-mixed-spaces-and-tabs': 2, // disallow mixed spaces and tabs for indentation - http://eslint.org/docs/rules/no-mixed-spaces-and-tabs
+    'no-multiple-empty-lines': [
+      2,
+      {
+        max: 2
+      }
+    ], // disallow multiple empty lines - http://eslint.org/docs/rules/no-multiple-empty-lines
+    'no-negated-condition': 1, // disallow negated conditions - http://eslint.org/docs/rules/no-negated-condition
+    'no-nested-ternary': 2, // disallow nested ternary expressions - http://eslint.org/docs/rules/no-nested-ternary
+    'no-new-object': 2, // disallow the use of the Object constructor - http://eslint.org/docs/rules/no-new-object
+    'no-plusplus': 0, // disallow use of unary operators, ++ and -- - http://eslint.org/docs/rules/no-plusplus
+    'no-restricted-syntax': [
+      2,
+      'WithStatement'
+    ], // disallow use of certain syntax in code - http://eslint.org/docs/rules/no-restricted-syntax
+    'no-spaced-func': 2, // disallow space between function identifier and application - http://eslint.org/docs/rules/no-spaced-func
+    'no-ternary': 0, // disallow the use of ternary operators - http://eslint.org/docs/rules/no-ternary
+    'no-trailing-spaces': 2, // disallow trailing whitespace at the end of lines - http://eslint.org/docs/rules/no-trailing-spaces
+    'no-underscore-dangle': 2, // disallow dangling underscores in identifiers - http://eslint.org/docs/rules/no-underscore-dangle
+    'no-unneeded-ternary': 2, // disallow the use of ternary operators when a simpler alternative exists - http://eslint.org/docs/rules/no-unneeded-ternary
+    'no-whitespace-before-property': 2, // disallow whitespace before properties - http://eslint.org/docs/rules/no-whitespace-before-property
+    'object-curly-spacing': [
+      2,
+      'always',
+      {
+        objectsInObjects: false,
+        arraysInObjects: false
+      }
+    ], // require or disallow padding inside curly braces - http://eslint.org/docs/rules/object-curly-spacing
+    'one-var': [
+      2,
+      'never'
+    ], // require or disallow one variable declaration per function - http://eslint.org/docs/rules/one-var
+    'one-var-declaration-per-line': [
+      2,
+      'initializations'
+    ], // require or disallow an newline around variable declarations - http://eslint.org/docs/rules/one-var-declaration-per-line
+    'operator-assignment': [
+      2,
+      'always'
+    ], // require assignment operator shorthand where possible or prohibit it entirely - http://eslint.org/docs/rules/operator-assignment
+    'operator-linebreak': [
+      2,
+      'before'
+    ], // enforce operators to be placed before or after line breaks - http://eslint.org/docs/rules/operator-linebreak
+    'padded-blocks': 0, // enforce padding within blocks - http://eslint.org/docs/rules/padded-blocks
+    'quote-props': [
+      2,
+      'consistent-as-needed'
+    ], // require quotes around object literal property names - http://eslint.org/docs/rules/quote-props
+    'quotes': [
+      2,
+      'single'
+    ], // specify whether backticks, double or single quotes should be used - http://eslint.org/docs/rules/quotes
+    'require-jsdoc': 0, // Require JSDoc comment - http://eslint.org/docs/rules/require-jsdoc
+    'semi': [
+      2,
+      'never'
+    ], // require or disallow use of semicolons instead of ASI - http://eslint.org/docs/rules/semi
+    'semi-spacing': 2, // enforce spacing before and after semicolons - http://eslint.org/docs/rules/semi-spacing
+    'sort-imports': 0, // sort import declarations within module - http://eslint.org/docs/rules/sort-imports
+    'sort-vars': 0, // sort variables within the same declaration block - http://eslint.org/docs/rules/sort-vars
+    'space-before-blocks': 0, // require or disallow a space before blocks - http://eslint.org/docs/rules/space-before-blocks
+    'space-before-function-paren': [
+      2,
+      'never'
+    ], // require or disallow a space before function opening parenthesis - http://eslint.org/docs/rules/space-before-function-paren
+    'space-in-parens': [
+      2,
+      'never'
+    ], // require or disallow spaces inside parentheses - http://eslint.org/docs/rules/space-in-parens
+    'space-infix-ops': 2, // require spaces around operators - http://eslint.org/docs/rules/space-infix-ops
+    'space-unary-ops': 2, // require or disallow spaces before/after unary operators - http://eslint.org/docs/rules/space-unary-ops
+    'spaced-comment': [
+      2,
+      'always'
+    ], // require or disallow a space immediately following the // or /* in a comment - http://eslint.org/docs/rules/spaced-comment
+    'wrap-regex': 2 // require regex literals to be wrapped in parentheses - http://eslint.org/docs/rules/wrap-regex
   }
 }
