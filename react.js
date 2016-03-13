@@ -16,7 +16,9 @@ module.exports = {
     es6: true
   },
   rules: {
-    'react/display-name': 2, // Force displayName on components
+    'react/display-name': [ 2, {
+      ignoreTranspilerName: true
+    }], // Force displayName on components
     'react/forbid-prop-types': 2, // Disallow `any`, `array`, and `object` propTypes
     'react/no-danger': 2, // prevent usage of <div dangerouslySetInnerHTML={{ __html: "Hello World" }}></div>;
     'react/no-deprecated': 2, // prevent usage of deprecated methods
