@@ -1,12 +1,19 @@
 {
   "name": "eslint-config-ksmithut",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A repo with a collection of the various linting/styling rules that I wish to follow",
   "main": "es5.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate": "node bin/generate"
   },
+  "files": [
+    "es5.js",
+    "es6.js",
+    "mocha.js",
+    "node.js",
+    "react.js"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ksmithut/eslint-config-ksmithut.git"
