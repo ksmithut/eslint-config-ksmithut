@@ -314,7 +314,10 @@ module.exports = {
     ], // require or disallow padding inside curly braces - http://eslint.org/docs/rules/object-curly-spacing
     'one-var': [
       2,
-      'never'
+      {
+        uninitialized: 'always',
+        initialized: 'never'
+      }
     ], // require or disallow one variable declaration per function - http://eslint.org/docs/rules/one-var
     'one-var-declaration-per-line': [
       2,

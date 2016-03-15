@@ -188,7 +188,10 @@ module.exports = {
       objectsInObjects: false,
       arraysInObjects: false
     }],
-    'one-var': [ 2, 'never' ],
+    'one-var': [ 2, {
+      uninitialized: 'always',
+      initialized: 'never'
+    }],
     'one-var-declaration-per-line': [ 2, 'initializations' ],
     'operator-assignment': [ 2, 'always' ],
     'operator-linebreak': [ 2, 'before' ],
