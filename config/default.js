@@ -141,7 +141,7 @@ module.exports = {
     'consistent-this': [ 2, 'that', 'self' ],
     'eol-last': 2,
     'func-names': 0,
-    'func-style': [ 2, 'declaration' ],
+    'func-style': [ 2, 'declaration', { allowArrowFunctions: true }],
     'id-blacklist': 0,
     'id-length': 0,
     'id-match': 0,

@@ -228,7 +228,10 @@ module.exports = {
     'func-names': 0, // require function expressions to have a name - http://eslint.org/docs/rules/func-names
     'func-style': [
       2,
-      'declaration'
+      'declaration',
+      {
+        allowArrowFunctions: true
+      }
     ], // enforce use of function declarations or expressions - http://eslint.org/docs/rules/func-style
     'id-blacklist': 0, // blacklist certain identifiers to prevent them being used - http://eslint.org/docs/rules/id-blacklist
     'id-length': 0, // this option enforces minimum and maximum identifier lengths (variable names, property names etc.) - http://eslint.org/docs/rules/id-length
