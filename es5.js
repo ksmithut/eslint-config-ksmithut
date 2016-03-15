@@ -1,7 +1,6 @@
 'use strict'
 
 module.exports = {
-  parser: 'esprima',
   rules: {
     /**
      * Possible Errors
