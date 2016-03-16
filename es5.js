@@ -75,7 +75,7 @@ module.exports = {
     'consistent-return': 2, // require return statements to either always or never specify values - http://eslint.org/docs/rules/consistent-return
     'curly': [
       2,
-      'multi'
+      'multi-line'
     ], // specify curly brace conventions for all control statements - http://eslint.org/docs/rules/curly
     'default-case': 2, // require default case in switch statements - http://eslint.org/docs/rules/default-case
     'dot-location': [
