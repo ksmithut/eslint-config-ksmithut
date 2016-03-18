@@ -163,7 +163,7 @@ module.exports = {
     'max-statements': [ 2, 11 ],
     'new-cap': 2,
     'new-parens': 2,
-    'newline-after-var': 2,
+    'newline-after-var': 0,
     'newline-before-return': 0,
     'newline-per-chained-call': 2,
     'no-array-constructor': 2,

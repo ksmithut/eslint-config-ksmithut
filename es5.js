@@ -274,7 +274,7 @@ module.exports = {
     ], // specify the maximum number of statement allowed in a function - http://eslint.org/docs/rules/max-statements
     'new-cap': 2, // require a capital letter for constructors - http://eslint.org/docs/rules/new-cap
     'new-parens': 2, // disallow the omission of parentheses when invoking a constructor with no arguments - http://eslint.org/docs/rules/new-parens
-    'newline-after-var': 2, // require or disallow an empty newline after variable declarations - http://eslint.org/docs/rules/newline-after-var
+    'newline-after-var': 0, // require or disallow an empty newline after variable declarations - http://eslint.org/docs/rules/newline-after-var
     'newline-before-return': 0, // require newline before return statement - http://eslint.org/docs/rules/newline-before-return
     'newline-per-chained-call': 2, // enforce newline after each call when chaining the calls - http://eslint.org/docs/rules/newline-per-chained-call
     'no-array-constructor': 2, // disallow use of the Array constructor - http://eslint.org/docs/rules/no-array-constructor
