@@ -173,7 +173,12 @@ module.exports = {
     'no-undef-init': 0, // disallow use of undefined when initializing variables - http://eslint.org/docs/rules/no-undef-init
     'no-undefined': 2, // disallow use of undefined variable - http://eslint.org/docs/rules/no-undefined
     'no-unused-vars': 2, // disallow declaration of variables that are not used in the code - http://eslint.org/docs/rules/no-unused-vars
-    'no-use-before-define': 2, // disallow use of variables before they are defined - http://eslint.org/docs/rules/no-use-before-define
+    'no-use-before-define': [
+      2,
+      {
+        functions: false
+      }
+    ], // disallow use of variables before they are defined - http://eslint.org/docs/rules/no-use-before-define
 
     /**
      * Node.js and CommonJS

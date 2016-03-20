@@ -116,7 +116,9 @@ module.exports = {
     'no-undef-init': 0,
     'no-undefined': 2,
     'no-unused-vars': 2,
-    'no-use-before-define': 2,
+    'no-use-before-define': [ 2, {
+      functions: false
+    }],
     'callback-return': 2,
     'global-require': 2,
     'handle-callback-err': 2,
