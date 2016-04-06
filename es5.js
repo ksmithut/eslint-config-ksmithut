@@ -105,7 +105,7 @@ module.exports = {
     'no-implicit-coercion': 2, // disallow the type conversions with shorter notations - http://eslint.org/docs/rules/no-implicit-coercion
     'no-implicit-globals': 2, // disallow var and named functions in global scope - http://eslint.org/docs/rules/no-implicit-globals
     'no-implied-eval': 2, // disallow use of eval()-like methods - http://eslint.org/docs/rules/no-implied-eval
-    'no-invalid-this': 2, // disallow this keywords outside of classes or class-like objects - http://eslint.org/docs/rules/no-invalid-this
+    'no-invalid-this': 0, // disallow this keywords outside of classes or class-like objects - http://eslint.org/docs/rules/no-invalid-this
     'no-iterator': 2, // disallow usage of __iterator__ property - http://eslint.org/docs/rules/no-iterator
     'no-labels': 2, // disallow use of labeled statements - http://eslint.org/docs/rules/no-labels
     'no-lone-blocks': 2, // disallow unnecessary nested blocks - http://eslint.org/docs/rules/no-lone-blocks
@@ -305,7 +305,7 @@ module.exports = {
     'no-spaced-func': 2, // disallow space between function identifier and application - http://eslint.org/docs/rules/no-spaced-func
     'no-ternary': 0, // disallow the use of ternary operators - http://eslint.org/docs/rules/no-ternary
     'no-trailing-spaces': 2, // disallow trailing whitespace at the end of lines - http://eslint.org/docs/rules/no-trailing-spaces
-    'no-underscore-dangle': 2, // disallow dangling underscores in identifiers - http://eslint.org/docs/rules/no-underscore-dangle
+    'no-underscore-dangle': 0, // disallow dangling underscores in identifiers - http://eslint.org/docs/rules/no-underscore-dangle
     'no-unneeded-ternary': 2, // disallow the use of ternary operators when a simpler alternative exists - http://eslint.org/docs/rules/no-unneeded-ternary
     'no-whitespace-before-property': 2, // disallow whitespace before properties - http://eslint.org/docs/rules/no-whitespace-before-property
     'object-curly-spacing': [

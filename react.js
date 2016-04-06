@@ -47,7 +47,7 @@ module.exports = {
     'react/jsx-indent-props': [ 2, 2 ], // prefer to indent props by two spaces
     'react/jsx-indent': [ 2, 2 ], // indent jsx components by 2 spaces
     'react/jsx-key': 2, // verify that there is a key in arrays of jsx elements
-    'react/jsx-max-props-per-line': [ 2, { 'maximum': 2 } ], // maximum of two props per line
+    'react/jsx-max-props-per-line': [ 2, { maximum: 2 }], // maximum of two props per line
     'react/jsx-no-bind': 2, // prevent `.bind` and arrow functions in the `render()` function
     'react/jsx-no-duplicate-props': 2, // prevent duplicate prop declarations
     'react/jsx-no-literals': 0, // allows string literals
@@ -56,6 +56,6 @@ module.exports = {
     'react/jsx-sort-props': 0, // don't worry about sorting props
     'react/jsx-space-before-closing': [ 2, 'always' ], // add spacing before closing tags
     'react/jsx-uses-react': 2, // Prevent React to be incorrectly marked as unused
-    'react/jsx-uses-vars': 2, // Prevent variables used in JSX to be incorrectly marked as unused
+    'react/jsx-uses-vars': 2 // Prevent variables used in JSX to be incorrectly marked as unused
   }
 }

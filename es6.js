@@ -14,10 +14,7 @@ module.exports = {
      * These rules are only relevant to ES6 environments.
      */
 
-    'arrow-body-style': [
-      2,
-      'as-needed'
-    ], // require braces in arrow function body - http://eslint.org/docs/rules/arrow-body-style
+    'arrow-body-style': 0, // require braces in arrow function body - http://eslint.org/docs/rules/arrow-body-style
     'arrow-parens': [
       1,
       'always'
