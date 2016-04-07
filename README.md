@@ -4,24 +4,48 @@ A repo with a collection of the various linting/styling rules that I wish to fol
 
 # eslint
 
+## base
+
 ```json
 {
-  "extends": "eslint-config-ksmithut"
+  "extends": "ksmithut"
 }
 ```
 
-es6 (babel)
+## es6 (babel)
+
+`npm install --save-dev babel-eslint`
 
 ```json
 {
-  "extends": "eslint-config-ksmithut/es6"
+  "extends": "ksmithut/es6"
 }
 ```
 
-es6 (node 4)
+## es6 (node 4)
 
 ```json
 {
-  "extends": "eslint-config-ksmithut/es6"
+  "extends": "ksmithut/es6-node"
+}
+```
+
+## react
+
+`npm install --save-dev eslint-plugin-react`
+
+```json
+{
+  "extends": "ksmithut/react"
+}
+```
+
+## mocha
+
+`npm install --save-dev eslint-plugin-mocha`
+
+```json
+{
+  "extends": "ksmithut/mocha"
 }
 ```
