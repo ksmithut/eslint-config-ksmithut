@@ -30,16 +30,16 @@
   },
   "homepage": "https://github.com/ksmithut/eslint-config-ksmithut",
   "devDependencies": {
-    "bluebird": "^3.3.5",
+    "bluebird": "^3.4.1",
     "cheerio": "^0.20.0",
     "comment-json": "^1.1.3",
-    "eslint": "^2.8.0",
+    "eslint": "^3.0.0",
     "merge": "^1.2.0",
     "request-promise": "^3.0.0"
   },
   "dependencies": {
-    "babel-eslint": "^6.0.2",
-    "eslint-plugin-mocha": "^2.2.0",
-    "eslint-plugin-react": "^5.0.0"
+    "babel-eslint": "^6.1.0",
+    "eslint-plugin-mocha": "^3.0.0",
+    "eslint-plugin-react": "^5.2.2"
   }
 }
