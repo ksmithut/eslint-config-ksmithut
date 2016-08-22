@@ -3,10 +3,10 @@
 module.exports = {
   parserOptions: {
     ecmaFeatures: {
-      globalReturn: true
-    }
+      globalReturn: true,
+    },
   },
   env: {
-    node: true
-  }
+    node: true,
+  },
 }

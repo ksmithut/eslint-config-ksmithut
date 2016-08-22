@@ -2,10 +2,10 @@
 
 module.exports = {
   parserOptions: {
-    ecmaVersion: 6
+    ecmaVersion: 6,
   },
   env: {
-    es6: true
+    es6: true,
   },
   rules: {
     /**
@@ -16,7 +16,7 @@ module.exports = {
     'arrow-body-style': 0, // require braces in arrow function body - http://eslint.org/docs/rules/arrow-body-style
     'arrow-parens': [
       1,
-      'always'
+      'always',
     ], // require parens in arrow function arguments - http://eslint.org/docs/rules/arrow-parens
     'arrow-spacing': 1, // require space before/after arrow function’s arrow - http://eslint.org/docs/rules/arrow-spacing
     'constructor-super': 2, // verify calls of super() in constructors - http://eslint.org/docs/rules/constructor-super
@@ -35,6 +35,6 @@ module.exports = {
     'prefer-template': 1, // suggest using template literals instead of strings concatenation - http://eslint.org/docs/rules/prefer-template
     'require-yield': 1, // disallow generator functions that do not have yield - http://eslint.org/docs/rules/require-yield
     'template-curly-spacing': 2, // enforce spacing around embedded expressions of template strings - http://eslint.org/docs/rules/template-curly-spacing
-    'yield-star-spacing': 2 // enforce spacing around the * in yield* expressions - http://eslint.org/docs/rules/yield-star-spacing
-  }
+    'yield-star-spacing': 2, // enforce spacing around the * in yield* expressions - http://eslint.org/docs/rules/yield-star-spacing
+  },
 }
