@@ -19,6 +19,7 @@ module.exports = {
     'mocha/no-sibling-hooks': 'off',
     'mocha/no-mocha-arrows': 'off',
     'mocha/no-hooks': 'off',
-    'mocha/no-top-level-hooks': 'error',
+    // Waiting for release of something after 4.3.0
+    // 'mocha/no-top-level-hooks': 'error',
   },
 }
