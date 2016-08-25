@@ -24,7 +24,10 @@ module.exports = {
     ], // require parentheses around arrow function arguments - http://eslint.org/docs/rules/arrow-parens
     'arrow-spacing': 'error', // enforce consistent spacing before and after the arrow in arrow functions - http://eslint.org/docs/rules/arrow-spacing
     'constructor-super': 'error', // require super() calls in constructors - http://eslint.org/docs/rules/constructor-super
-    'generator-star-spacing': 'error', // enforce consistent spacing around * operators in generator functions - http://eslint.org/docs/rules/generator-star-spacing
+    'generator-star-spacing': [
+      'error',
+      'after',
+    ], // enforce consistent spacing around * operators in generator functions - http://eslint.org/docs/rules/generator-star-spacing
     'no-class-assign': 'error', // disallow reassigning class members - http://eslint.org/docs/rules/no-class-assign
     'no-confusing-arrow': 'error', // disallow arrow functions where they could be confused with comparisons - http://eslint.org/docs/rules/no-confusing-arrow
     'no-const-assign': 'error', // disallow reassigning const variables - http://eslint.org/docs/rules/no-const-assign

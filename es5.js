@@ -22,13 +22,7 @@ module.exports = {
     'no-empty': 'error', // disallow empty block statements - http://eslint.org/docs/rules/no-empty
     'no-ex-assign': 'error', // disallow reassigning exceptions in catch clauses - http://eslint.org/docs/rules/no-ex-assign
     'no-extra-boolean-cast': 'error', // disallow unnecessary boolean casts - http://eslint.org/docs/rules/no-extra-boolean-cast
-    'no-extra-parens': [
-      'error',
-      'all',
-      {
-        conditionalAssign: true,
-      },
-    ], // disallow unnecessary parentheses - http://eslint.org/docs/rules/no-extra-parens
+    'no-extra-parens': 'off', // disallow unnecessary parentheses - http://eslint.org/docs/rules/no-extra-parens
     'no-extra-semi': 'error', // disallow unnecessary semicolons - http://eslint.org/docs/rules/no-extra-semi
     'no-func-assign': 'error', // disallow reassigning function declarations - http://eslint.org/docs/rules/no-func-assign
     'no-inner-declarations': 'error', // disallow function or var declarations in nested blocks - http://eslint.org/docs/rules/no-inner-declarations

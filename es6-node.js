@@ -20,7 +20,10 @@ module.exports = {
     ], // require parens in arrow function arguments - http://eslint.org/docs/rules/arrow-parens
     'arrow-spacing': 1, // require space before/after arrow function’s arrow - http://eslint.org/docs/rules/arrow-spacing
     'constructor-super': 2, // verify calls of super() in constructors - http://eslint.org/docs/rules/constructor-super
-    'generator-star-spacing': 2, // enforce spacing around the * in generator functions - http://eslint.org/docs/rules/generator-star-spacing
+    'generator-star-spacing': [
+      'error',
+      'after',
+    ], // enforce spacing around the * in generator functions - http://eslint.org/docs/rules/generator-star-spacing
     'no-class-assign': 2, // disallow modifying variables of class declarations - http://eslint.org/docs/rules/no-class-assign
     'no-confusing-arrow': 1, // disallow arrow functions where they could be confused with comparisons - http://eslint.org/docs/rules/no-confusing-arrow
     'no-const-assign': 2, // disallow modifying variables that are declared using const - http://eslint.org/docs/rules/no-const-assign
