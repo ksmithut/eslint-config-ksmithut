@@ -209,7 +209,7 @@ module.exports = {
     'block-spacing': 'error', // enforce consistent spacing inside single-line blocks - http://eslint.org/docs/rules/block-spacing
     'brace-style': [
       'error',
-      '1tbs',
+      'stroustrup',
       {
         allowSingleLine: true,
       },
@@ -317,7 +317,7 @@ module.exports = {
     'no-tabs': 'error', // Disallow tabs in file - http://eslint.org/docs/rules/no-tabs
     'no-ternary': 'off', // disallow ternary operators - http://eslint.org/docs/rules/no-ternary
     'no-trailing-spaces': 'error', // disallow trailing whitespace at the end of lines - http://eslint.org/docs/rules/no-trailing-spaces
-    'no-underscore-dangle': 'error', // disallow dangling underscores in identifiers - http://eslint.org/docs/rules/no-underscore-dangle
+    'no-underscore-dangle': 'off', // disallow dangling underscores in identifiers - http://eslint.org/docs/rules/no-underscore-dangle
     'no-unneeded-ternary': 'error', // disallow ternary operators when simpler alternatives exist - http://eslint.org/docs/rules/no-unneeded-ternary
     'no-whitespace-before-property': 'error', // disallow whitespace before properties - http://eslint.org/docs/rules/no-whitespace-before-property
     'object-curly-newline': 'off', // enforce consistent line breaks inside braces - http://eslint.org/docs/rules/object-curly-newline
@@ -332,7 +332,7 @@ module.exports = {
     'object-property-newline': [
       'error',
       {
-        allowMultiplePropertiesPerLine: false,
+        allowMultiplePropertiesPerLine: true,
       },
     ], // enforce placing object properties on separate lines - http://eslint.org/docs/rules/object-property-newline
     'one-var-declaration-per-line': [

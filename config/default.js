@@ -137,7 +137,7 @@ module.exports = {
       objectsInArrays: false,
     }],
     'block-spacing': 'error',
-    'brace-style': [ 'error', '1tbs', { allowSingleLine: true }],
+    'brace-style': [ 'error', 'stroustrup', { allowSingleLine: true }],
     'camelcase': 'error',
     'comma-spacing': 'error',
     'comma-style': 'off',
@@ -190,7 +190,7 @@ module.exports = {
     'no-tabs': 'error',
     'no-ternary': 'off',
     'no-trailing-spaces': 'error',
-    'no-underscore-dangle': 'error',
+    'no-underscore-dangle': 'off',
     'no-unneeded-ternary': 'error',
     'no-whitespace-before-property': 'error',
     'object-curly-newline': 'off',
@@ -199,7 +199,7 @@ module.exports = {
       arraysInObjects: false,
     }],
     'object-property-newline': [ 'error', {
-      allowMultiplePropertiesPerLine: false,
+      allowMultiplePropertiesPerLine: true,
     }],
     'one-var': [ 'error', {
       uninitialized: 'always',
