@@ -43,7 +43,7 @@ module.exports = {
     'object-shorthand': 'error', // require or disallow method and property shorthand syntax for object literals - http://eslint.org/docs/rules/object-shorthand
     'prefer-arrow-callback': 'error', // require arrow functions as callbacks - http://eslint.org/docs/rules/prefer-arrow-callback
     'prefer-const': 'error', // require const declarations for variables that are never reassigned after declared - http://eslint.org/docs/rules/prefer-const
-    'prefer-reflect': 'error', // require Reflect methods where applicable - http://eslint.org/docs/rules/prefer-reflect
+    'prefer-reflect': 'off', // require Reflect methods where applicable - http://eslint.org/docs/rules/prefer-reflect
     'prefer-rest-params': 'error', // require rest parameters instead of arguments - http://eslint.org/docs/rules/prefer-rest-params
     'prefer-spread': 'error', // require spread operators instead of .apply() - http://eslint.org/docs/rules/prefer-spread
     'prefer-template': 'error', // require template literals instead of string concatenation - http://eslint.org/docs/rules/prefer-template
