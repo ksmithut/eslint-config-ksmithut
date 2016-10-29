@@ -225,7 +225,7 @@ module.exports = {
     'spaced-comment': [ 'error', 'always' ],
     'unicode-bom': 'error',
     'wrap-regex': 'error',
-    'arrow-body-style': [ 'error', 'as-needed' ],
+    'arrow-body-style': 'off',
     'arrow-parens': [ 'error', 'always' ],
     'arrow-spacing': 'error',
     'constructor-super': 'error',
