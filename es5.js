@@ -22,17 +22,19 @@ module.exports = {
     'no-empty': 'error', // disallow empty block statements - http://eslint.org/docs/rules/no-empty
     'no-ex-assign': 'error', // disallow reassigning exceptions in catch clauses - http://eslint.org/docs/rules/no-ex-assign
     'no-extra-boolean-cast': 'error', // disallow unnecessary boolean casts - http://eslint.org/docs/rules/no-extra-boolean-cast
-    'no-extra-parens': 'off', // disallow unnecessary parentheses - http://eslint.org/docs/rules/no-extra-parens
+    'no-extra-parens': [
+      'off',
+    ], // disallow unnecessary parentheses - http://eslint.org/docs/rules/no-extra-parens
     'no-extra-semi': 'error', // disallow unnecessary semicolons - http://eslint.org/docs/rules/no-extra-semi
     'no-func-assign': 'error', // disallow reassigning function declarations - http://eslint.org/docs/rules/no-func-assign
-    'no-inner-declarations': 'error', // disallow function or var declarations in nested blocks - http://eslint.org/docs/rules/no-inner-declarations
+    'no-inner-declarations': 'error', // disallow variable or function declarations in nested blocks - http://eslint.org/docs/rules/no-inner-declarations
     'no-invalid-regexp': 'error', // disallow invalid regular expression strings in RegExp constructors - http://eslint.org/docs/rules/no-invalid-regexp
     'no-irregular-whitespace': 'error', // disallow irregular whitespace outside of strings and comments - http://eslint.org/docs/rules/no-irregular-whitespace
     'no-obj-calls': 'error', // disallow calling global object properties as functions - http://eslint.org/docs/rules/no-obj-calls
     'no-prototype-builtins': 'error', // disallow calling some Object.prototype methods directly on objects - http://eslint.org/docs/rules/no-prototype-builtins
     'no-regex-spaces': 'error', // disallow multiple spaces in regular expressions - http://eslint.org/docs/rules/no-regex-spaces
     'no-sparse-arrays': 'error', // disallow sparse arrays - http://eslint.org/docs/rules/no-sparse-arrays
-    'no-template-curly-in-string': 'error', // Disallow template literal placeholder syntax in regular strings - http://eslint.org/docs/rules/no-template-curly-in-string
+    'no-template-curly-in-string': 'error', // disallow template literal placeholder syntax in regular strings - http://eslint.org/docs/rules/no-template-curly-in-string
     'no-unexpected-multiline': 'error', // disallow confusing multiline expressions - http://eslint.org/docs/rules/no-unexpected-multiline
     'no-unreachable': 'error', // disallow unreachable code after return, throw, continue, and break statements - http://eslint.org/docs/rules/no-unreachable
     'no-unsafe-finally': 'error', // disallow control flow statements in finally blocks - http://eslint.org/docs/rules/no-unsafe-finally
@@ -48,19 +50,19 @@ module.exports = {
         requireParamDescription: true,
         requireReturnDescription: true,
         requireReturnType: true,
-      },
+      }
     ], // enforce valid JSDoc comments - http://eslint.org/docs/rules/valid-jsdoc
     'valid-typeof': 'error', // enforce comparing typeof expressions against valid strings - http://eslint.org/docs/rules/valid-typeof
 
     /**
      * Best Practices
-     * These rules relate to better ways of doing things to help you avoid
-     * problems:
+     * These rules relate to better ways of doing things to help you avoid problems:
      */
 
     'accessor-pairs': 'error', // enforce getter and setter pairs in objects - http://eslint.org/docs/rules/accessor-pairs
     'array-callback-return': 'error', // enforce return statements in callbacks of array methods - http://eslint.org/docs/rules/array-callback-return
     'block-scoped-var': 'error', // enforce the use of variables within the scope they are defined - http://eslint.org/docs/rules/block-scoped-var
+    'class-methods-use-this': 'warn', // enforce that class methods utilize this - http://eslint.org/docs/rules/class-methods-use-this
     'complexity': [
       'error',
       11,
@@ -97,7 +99,7 @@ module.exports = {
     'no-floating-decimal': 'error', // disallow leading or trailing decimal points in numeric literals - http://eslint.org/docs/rules/no-floating-decimal
     'no-global-assign': 'error', // disallow assignments to native objects or read-only global variables - http://eslint.org/docs/rules/no-global-assign
     'no-implicit-coercion': 'error', // disallow shorthand type conversions - http://eslint.org/docs/rules/no-implicit-coercion
-    'no-implicit-globals': 'error', // disallow var and named function declarations in the global scope - http://eslint.org/docs/rules/no-implicit-globals
+    'no-implicit-globals': 'error', // disallow variable and function declarations in the global scope - http://eslint.org/docs/rules/no-implicit-globals
     'no-implied-eval': 'error', // disallow the use of eval()-like methods - http://eslint.org/docs/rules/no-implied-eval
     'no-invalid-this': 'error', // disallow this keywords outside of classes or class-like objects - http://eslint.org/docs/rules/no-invalid-this
     'no-iterator': 'error', // disallow the use of the __iterator__ property - http://eslint.org/docs/rules/no-iterator
@@ -114,11 +116,13 @@ module.exports = {
     'no-octal': 'error', // disallow octal literals - http://eslint.org/docs/rules/no-octal
     'no-param-reassign': 'off', // disallow reassigning function parameters - http://eslint.org/docs/rules/no-param-reassign
     'no-proto': 'error', // disallow the use of the __proto__ property - http://eslint.org/docs/rules/no-proto
-    'no-redeclare': 'error', // disallow var redeclaration - http://eslint.org/docs/rules/no-redeclare
+    'no-redeclare': 'error', // disallow variable redeclaration - http://eslint.org/docs/rules/no-redeclare
+    'no-restricted-properties': 'off', // disallow certain properties on certain objects - http://eslint.org/docs/rules/no-restricted-properties
     'no-return-assign': [
       'error',
       'except-parens',
     ], // disallow assignment operators in return statements - http://eslint.org/docs/rules/no-return-assign
+    'no-return-await': 'error', // disallow unnecessary return await - http://eslint.org/docs/rules/no-return-await
     'no-script-url': 'error', // disallow javascript: urls - http://eslint.org/docs/rules/no-script-url
     'no-self-assign': 'error', // disallow assignments where both sides are exactly the same - http://eslint.org/docs/rules/no-self-assign
     'no-self-compare': 'error', // disallow comparisons where both sides are exactly the same - http://eslint.org/docs/rules/no-self-compare
@@ -130,6 +134,7 @@ module.exports = {
     'no-useless-call': 'error', // disallow unnecessary calls to .call() and .apply() - http://eslint.org/docs/rules/no-useless-call
     'no-useless-concat': 'error', // disallow unnecessary concatenation of literals or template literals - http://eslint.org/docs/rules/no-useless-concat
     'no-useless-escape': 'error', // disallow unnecessary escape characters - http://eslint.org/docs/rules/no-useless-escape
+    'no-useless-return': 'error', // disallow redundant return statements - http://eslint.org/docs/rules/no-useless-return
     'no-void': 'error', // disallow void operators - http://eslint.org/docs/rules/no-void
     'no-warning-comments': 'warn', // disallow specified warning terms in comments - http://eslint.org/docs/rules/no-warning-comments
     'no-with': 'error', // disallow with statements - http://eslint.org/docs/rules/no-with
@@ -156,13 +161,13 @@ module.exports = {
      * These rules relate to variable declarations:
      */
 
-    'init-declarations': 'off', // require or disallow initialization in var declarations - http://eslint.org/docs/rules/init-declarations
+    'init-declarations': 'off', // require or disallow initialization in variable declarations - http://eslint.org/docs/rules/init-declarations
     'no-catch-shadow': 'error', // disallow catch clause parameters from shadowing variables in the outer scope - http://eslint.org/docs/rules/no-catch-shadow
     'no-delete-var': 'error', // disallow deleting variables - http://eslint.org/docs/rules/no-delete-var
     'no-label-var': 'error', // disallow labels that share a name with a variable - http://eslint.org/docs/rules/no-label-var
     'no-restricted-globals': 'error', // disallow specified global variables - http://eslint.org/docs/rules/no-restricted-globals
     'no-shadow-restricted-names': 'error', // disallow identifiers from shadowing restricted names - http://eslint.org/docs/rules/no-shadow-restricted-names
-    'no-shadow': 'error', // disallow var declarations from shadowing variables in the outer scope - http://eslint.org/docs/rules/no-shadow
+    'no-shadow': 'error', // disallow variable declarations from shadowing variables declared in the outer scope - http://eslint.org/docs/rules/no-shadow
     'no-undef-init': 'off', // disallow initializing variables to undefined - http://eslint.org/docs/rules/no-undef-init
     'no-undef': 'error', // disallow the use of undeclared variables unless mentioned in /*global */ comments - http://eslint.org/docs/rules/no-undef
     'no-undefined': 'error', // disallow the use of undefined as an identifier - http://eslint.org/docs/rules/no-undefined
@@ -176,14 +181,13 @@ module.exports = {
 
     /**
      * Node.js and CommonJS
-     * These rules relate to code running in Node.js, or in browsers with
-     * CommonJS:
+     * These rules relate to code running in Node.js, or in browsers with CommonJS:
      */
 
     'callback-return': 'error', // require return statements after callbacks - http://eslint.org/docs/rules/callback-return
     'global-require': 'error', // require require() calls to be placed at top-level module scope - http://eslint.org/docs/rules/global-require
     'handle-callback-err': 'error', // require error handling in callbacks - http://eslint.org/docs/rules/handle-callback-err
-    'no-mixed-requires': 'error', // disallow require calls to be mixed with regular var declarations - http://eslint.org/docs/rules/no-mixed-requires
+    'no-mixed-requires': 'error', // disallow require calls to be mixed with regular variable declarations - http://eslint.org/docs/rules/no-mixed-requires
     'no-new-require': 'error', // disallow new operators with calls to require - http://eslint.org/docs/rules/no-new-require
     'no-path-concat': 'error', // disallow string concatenation with __dirname and __filename - http://eslint.org/docs/rules/no-path-concat
     'no-process-env': 'off', // disallow the use of process.env - http://eslint.org/docs/rules/no-process-env
@@ -193,8 +197,7 @@ module.exports = {
 
     /**
      * Stylistic Issues
-     * These rules relate to style guidelines, and are therefore quite
-     * subjective:
+     * These rules relate to style guidelines, and are therefore quite subjective:
      */
 
     'array-bracket-spacing': [
@@ -227,11 +230,12 @@ module.exports = {
       'that',
       'self',
     ], // enforce consistent naming when capturing the current execution context - http://eslint.org/docs/rules/consistent-this
-    'eol-last': 'error', // enforce at least one newline at the end of files - http://eslint.org/docs/rules/eol-last
+    'eol-last': 'error', // require or disallow newline at the end of files - http://eslint.org/docs/rules/eol-last
     'func-call-spacing': [
       'error',
       'never',
     ], // require or disallow spacing between function identifiers and their invocations - http://eslint.org/docs/rules/func-call-spacing
+    'func-name-matching': 'error', // require function names to match the name of the variable or property to which they are assigned - http://eslint.org/docs/rules/func-name-matching
     'func-names': 'off', // require or disallow named function expressions - http://eslint.org/docs/rules/func-names
     'func-style': [
       'error',
@@ -245,7 +249,7 @@ module.exports = {
     'id-match': 'off', // require identifiers to match a specified regular expression - http://eslint.org/docs/rules/id-match
     'indent': [
       'error',
-      2,
+      2
     ], // enforce consistent indentation - http://eslint.org/docs/rules/indent
     'jsx-quotes': [
       'error',
@@ -253,8 +257,10 @@ module.exports = {
     ], // enforce the consistent use of either double or single quotes in JSX attributes - http://eslint.org/docs/rules/jsx-quotes
     'key-spacing': 'error', // enforce consistent spacing between keys and values in object literal properties - http://eslint.org/docs/rules/key-spacing
     'keyword-spacing': 'error', // enforce consistent spacing before and after keywords - http://eslint.org/docs/rules/keyword-spacing
+    'line-comment-position': 'off', // enforce position of line comments - http://eslint.org/docs/rules/line-comment-position
     'linebreak-style': 'error', // enforce consistent linebreak style - http://eslint.org/docs/rules/linebreak-style
     'lines-around-comment': 'off', // require empty lines around comments - http://eslint.org/docs/rules/lines-around-comment
+    'lines-around-directive': 'error', // require or disallow newlines around directives - http://eslint.org/docs/rules/lines-around-directive
     'max-depth': [
       'error',
       4,
@@ -288,9 +294,9 @@ module.exports = {
       11,
     ], // enforce a maximum number of statements allowed in function blocks - http://eslint.org/docs/rules/max-statements
     'multiline-ternary': 'off', // enforce newlines between operands of ternary expressions - http://eslint.org/docs/rules/multiline-ternary
-    'new-cap': 'error', // require constructor function names to begin with a capital letter - http://eslint.org/docs/rules/new-cap
+    'new-cap': 'error', // require constructor names to begin with a capital letter - http://eslint.org/docs/rules/new-cap
     'new-parens': 'error', // require parentheses when invoking a constructor with no arguments - http://eslint.org/docs/rules/new-parens
-    'newline-after-var': 'off', // require or disallow an empty line after var declarations - http://eslint.org/docs/rules/newline-after-var
+    'newline-after-var': 'off', // require or disallow an empty line after variable declarations - http://eslint.org/docs/rules/newline-after-var
     'newline-before-return': 'off', // require an empty line before return statements - http://eslint.org/docs/rules/newline-before-return
     'newline-per-chained-call': 'error', // require a newline after each call in a method chain - http://eslint.org/docs/rules/newline-per-chained-call
     'no-array-constructor': 'error', // disallow Array constructors - http://eslint.org/docs/rules/no-array-constructor
@@ -314,7 +320,7 @@ module.exports = {
       'error',
       'WithStatement',
     ], // disallow specified syntax - http://eslint.org/docs/rules/no-restricted-syntax
-    'no-tabs': 'error', // Disallow tabs in file - http://eslint.org/docs/rules/no-tabs
+    'no-tabs': 'error', // disallow tabs in file - http://eslint.org/docs/rules/no-tabs
     'no-ternary': 'off', // disallow ternary operators - http://eslint.org/docs/rules/no-ternary
     'no-trailing-spaces': 'error', // disallow trailing whitespace at the end of lines - http://eslint.org/docs/rules/no-trailing-spaces
     'no-underscore-dangle': 'off', // disallow dangling underscores in identifiers - http://eslint.org/docs/rules/no-underscore-dangle
@@ -338,7 +344,7 @@ module.exports = {
     'one-var-declaration-per-line': [
       'error',
       'initializations',
-    ], // require or disallow newlines around var declarations - http://eslint.org/docs/rules/one-var-declaration-per-line
+    ], // require or disallow newlines around variable declarations - http://eslint.org/docs/rules/one-var-declaration-per-line
     'one-var': [
       'error',
       {
@@ -369,7 +375,7 @@ module.exports = {
       'error',
       'never',
     ], // require or disallow semicolons instead of ASI - http://eslint.org/docs/rules/semi
-    'sort-keys': 'off', // requires object keys to be sorted - http://eslint.org/docs/rules/sort-keys
+    'sort-keys': 'off', // require object keys to be sorted - http://eslint.org/docs/rules/sort-keys
     'sort-vars': 'off', // require variables within the same declaration block to be sorted - http://eslint.org/docs/rules/sort-vars
     'space-before-blocks': 'off', // enforce consistent spacing before blocks - http://eslint.org/docs/rules/space-before-blocks
     'space-before-function-paren': [
@@ -380,7 +386,7 @@ module.exports = {
       'error',
       'never',
     ], // enforce consistent spacing inside parentheses - http://eslint.org/docs/rules/space-in-parens
-    'space-infix-ops': 'error', // require spacing around operators - http://eslint.org/docs/rules/space-infix-ops
+    'space-infix-ops': 'error', // require spacing around infix operators - http://eslint.org/docs/rules/space-infix-ops
     'space-unary-ops': 'error', // enforce consistent spacing before or after unary operators - http://eslint.org/docs/rules/space-unary-ops
     'spaced-comment': [
       'error',

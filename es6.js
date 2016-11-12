@@ -11,7 +11,7 @@ module.exports = {
   rules: {
     /**
      * ECMAScript 6
-     * These rules relate to ES6, also known as ES2015:
+     * These rules are only relevant to ES6 environments.
      */
 
     'arrow-body-style': 'off', // require braces around arrow function bodies - http://eslint.org/docs/rules/arrow-body-style
@@ -40,13 +40,14 @@ module.exports = {
     'object-shorthand': 'error', // require or disallow method and property shorthand syntax for object literals - http://eslint.org/docs/rules/object-shorthand
     'prefer-arrow-callback': 'error', // require arrow functions as callbacks - http://eslint.org/docs/rules/prefer-arrow-callback
     'prefer-const': 'error', // require const declarations for variables that are never reassigned after declared - http://eslint.org/docs/rules/prefer-const
-    'prefer-reflect': 'off', // require Reflect methods where applicable - http://eslint.org/docs/rules/prefer-reflect
+    'prefer-numeric-literals': 'off', // disallow parseInt() in favor of binary, octal, and hexadecimal literals - http://eslint.org/docs/rules/prefer-numeric-literals
     'prefer-rest-params': 'error', // require rest parameters instead of arguments - http://eslint.org/docs/rules/prefer-rest-params
     'prefer-spread': 'error', // require spread operators instead of .apply() - http://eslint.org/docs/rules/prefer-spread
     'prefer-template': 'error', // require template literals instead of string concatenation - http://eslint.org/docs/rules/prefer-template
     'require-yield': 'error', // require generator functions to contain yield - http://eslint.org/docs/rules/require-yield
     'rest-spread-spacing': 'error', // enforce spacing between rest and spread operators and their expressions - http://eslint.org/docs/rules/rest-spread-spacing
     'sort-imports': 'off', // enforce sorted import declarations within modules - http://eslint.org/docs/rules/sort-imports
+    'symbol-description': 'error', // require symbol descriptions - http://eslint.org/docs/rules/symbol-description
     'template-curly-spacing': 'error', // require or disallow spacing around embedded expressions of template strings - http://eslint.org/docs/rules/template-curly-spacing
     'yield-star-spacing': 'error', // require or disallow spacing around the * in yield* expressions - http://eslint.org/docs/rules/yield-star-spacing
   },
